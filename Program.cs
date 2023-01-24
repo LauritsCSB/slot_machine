@@ -14,6 +14,16 @@
             {
                 row1[i] = rand.Next(1, 10);
             }
+
+            for (int i = 0; i < row2.Length; i++)
+            {
+                row2[i] = rand.Next(1, 10);
+            }
+
+            for (int i = 0; i < row3.Length; i++)
+            {
+                row3[i] = rand.Next(1, 10);
+            }
         }
     }
 }
