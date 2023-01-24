@@ -4,12 +4,13 @@
     {
         static void Main(string[] args)
         {
-            int[] row1 = new int[3];
-            int[] row2 = new int[3];
-            int[] row3 = new int[3];
+            int[] row1 = randomNumberArray();
+            int[] row2 = randomNumberArray();
+            int[] row3 = randomNumberArray();
 
-            var rand = new Random();
+            //var rand = new Random();
 
+            /*
             for (int i = 0; i < row1.Length; i++)
             {
                 row1[i] = rand.Next(1, 10);
@@ -24,6 +25,13 @@
             {
                 row3[i] = rand.Next(1, 10);
             }
+            */
+        }
+
+        static int[] randomNumberArray()
+        {
+            var rand = new Random();
+            return new[] { rand.Next(1, 10), rand.Next(1, 10), rand.Next(1, 10) };
         }
     }
 }
