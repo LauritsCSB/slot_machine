@@ -8,7 +8,9 @@
             int[] slotRow2 = randomNumbers();
             int[] slotRow3 = randomNumbers();
             int playMoney = 100;
-            string wantToPlay;
+            string wantToPlay = string.Empty;
+            string lockOrNo;
+            string lockRowNumber;
 
             do
             {
@@ -16,10 +18,36 @@
                 Console.WriteLine($"{slotRow2[0]} {slotRow2[1]} {slotRow2[2]}");
                 Console.WriteLine($"{slotRow3[0]} {slotRow3[1]} {slotRow3[2]}");
 
+                Console.WriteLine("Do you want to lock a row? Type y for yes and press enter.");
+                lockOrNo = Console.ReadLine().ToLower();
+                if (lockOrNo.Equals("y"))
+                {
+                    Console.WriteLine("Type 1 to lock first row, type 2 for second and 3 for third.");
+                    lockRowNumber = Console.ReadLine();
+                    switch (Int32.Parse(lockRowNumber))
+                    {
+                        case 1:
+                            slotRow2 = randomNumbers();
+                            slotRow3 = randomNumbers()
+                            continue;
+                        case 2:
+                            slotRow = randomNumbers();
+                            slotRow3 = randomNumbers();
+                            break;
+                        case 3:
+                            slotRow2 = randomNumbers();
+                            slotRow3 = randomNumbers();
+                            break;
+                        default:
+                            break;
+                    }
+                }
 
-                Console.WriteLine("Pull again? Press y for yes, type anything else for no");
+
+                Console.WriteLine("Pull again? Press y for yes, type anything else for no and press enter.");
                 wantToPlay = Console.ReadLine().ToLower();
-            } while (wantToPlay == "y" && playMoney > 0);
+                Console.Clear();
+            } while (wantToPlay.Equals("y") && playMoney > 0);
 
             Console.WriteLine(playMoney > 0 ? $"Congratulations, you won ${playMoney}!" : "Sorry you lost..");
 
