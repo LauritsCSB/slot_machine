@@ -4,31 +4,23 @@
     {
         static void Main(string[] args)
         {
-            int[] row1 = randomNumberArray();
-            int[] row2 = randomNumberArray();
-            int[] row3 = randomNumberArray();
+            int[] slotRow = randomNumbers();
+            int[] slotRow2 = randomNumbers();
+            int[] slotRow3 = randomNumbers();
 
-            //var rand = new Random();
+            //TODO Create game loop asking if user wants to play
 
-            /*
-            for (int i = 0; i < row1.Length; i++)
-            {
-                row1[i] = rand.Next(1, 10);
-            }
+            //TODO Output slot machine rows to user
 
-            for (int i = 0; i < row2.Length; i++)
-            {
-                row2[i] = rand.Next(1, 10);
-            }
+            //TODO Create function to "lock" 1 or 2 rows (switch between methods)
 
-            for (int i = 0; i < row3.Length; i++)
-            {
-                row3[i] = rand.Next(1, 10);
-            }
-            */
+            //TODO Create function to collect rewards (All numbers same, cross rows same, two rows same,
+            //"slash row same", one row same
+
+            //TODO Keep track of pricemoney, maybe withdraw amount for locking rows?
         }
 
-        static int[] randomNumberArray()
+        static int[] randomNumbers()
         {
             var rand = new Random();
             return new[] { rand.Next(1, 10), rand.Next(1, 10), rand.Next(1, 10) };
