@@ -7,6 +7,7 @@
             int[] slotRow = randomNumbers();
             int[] slotRow2 = randomNumbers();
             int[] slotRow3 = randomNumbers();
+            int playMoney = 100;
             string wantToPlay;
 
             do
@@ -15,9 +16,10 @@
                 Console.WriteLine($"{slotRow2[0]} {slotRow2[1]} {slotRow2[2]}");
                 Console.WriteLine($"{slotRow3[0]} {slotRow3[1]} {slotRow3[2]}");
 
+
                 Console.WriteLine("Pull again? Press y for yes, type anything else for no");
                 wantToPlay = Console.ReadLine().ToLower();
-            } while (wantToPlay == "y");
+            } while (wantToPlay == "y" && playMoney > 0);
 
 
             //TODO Create function to "lock" 1 or 2 rows (switch between methods)
