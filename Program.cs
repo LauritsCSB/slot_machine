@@ -21,6 +21,8 @@
                 wantToPlay = Console.ReadLine().ToLower();
             } while (wantToPlay == "y" && playMoney > 0);
 
+            Console.WriteLine(playMoney > 0 ? $"Congratulations, you won ${playMoney}!" : "Sorry you lost..");
+
 
             //TODO Create function to "lock" 1 or 2 rows (switch between methods)
 
