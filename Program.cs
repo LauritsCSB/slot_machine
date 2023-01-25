@@ -26,6 +26,8 @@
             //"slash row same", one row same
 
             //TODO Keep track of pricemoney, maybe withdraw amount for locking rows?
+
+            //TODO Output pricemoney and message to user if game isn't continued or lost
         }
 
         static int[] randomNumbers()
