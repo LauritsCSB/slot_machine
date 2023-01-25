@@ -7,10 +7,18 @@
             int[] slotRow = randomNumbers();
             int[] slotRow2 = randomNumbers();
             int[] slotRow3 = randomNumbers();
+            string wantToPlay;
 
-            //TODO Create game loop asking if user wants to play
+            do
+            {
+                Console.WriteLine(slotRow);
+                Console.WriteLine(slotRow2);
+                Console.WriteLine(slotRow3);
 
-            //TODO Output slot machine rows to user
+                Console.WriteLine("Pull again? Press y for yes, type anything else for no");
+                wantToPlay = Console.ReadLine().ToLower();
+            } while (wantToPlay == "y");
+
 
             //TODO Create function to "lock" 1 or 2 rows (switch between methods)
 
