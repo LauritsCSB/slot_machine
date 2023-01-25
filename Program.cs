@@ -11,9 +11,9 @@
 
             do
             {
-                Console.WriteLine(slotRow);
-                Console.WriteLine(slotRow2);
-                Console.WriteLine(slotRow3);
+                Console.WriteLine($"{slotRow[0]} {slotRow[1]} {slotRow[2]}");
+                Console.WriteLine($"{slotRow2[0]} {slotRow2[1]} {slotRow2[2]}");
+                Console.WriteLine($"{slotRow3[0]} {slotRow3[1]} {slotRow3[2]}");
 
                 Console.WriteLine("Pull again? Press y for yes, type anything else for no");
                 wantToPlay = Console.ReadLine().ToLower();
