@@ -18,32 +18,6 @@
                 Console.WriteLine($"{slotRow2[0]} {slotRow2[1]} {slotRow2[2]}");
                 Console.WriteLine($"{slotRow3[0]} {slotRow3[1]} {slotRow3[2]}");
 
-                Console.WriteLine("Do you want to lock a row? Type y for yes and press enter.");
-                lockOrNo = Console.ReadLine().ToLower();
-                if (lockOrNo.Equals("y"))
-                {
-                    Console.WriteLine("Type 1 to lock first row, type 2 for second and 3 for third.");
-                    lockRowNumber = Console.ReadLine();
-                    switch (Int32.Parse(lockRowNumber))
-                    {
-                        case 1:
-                            slotRow2 = randomNumbers();
-                            slotRow3 = randomNumbers()
-                            continue;
-                        case 2:
-                            slotRow1 = randomNumbers();
-                            slotRow3 = randomNumbers();
-                            break;
-                        case 3:
-                            slotRow2 = randomNumbers();
-                            slotRow3 = randomNumbers();
-                            break;
-                        default:
-                            break;
-                    }
-                }
-
-
                 if (twoRowsSame(slotRow1, slotRow2) || twoRowsSame(slotRow1, slotRow3) || twoRowsSame(slotRow2, slotRow3))
                 {
                     playMoney += 50;
@@ -67,6 +41,31 @@
                 if (oneRow(slotRow1) || oneRow(slotRow2) || oneRow(slotRow3))
                 {
                     playMoney += 15;
+                }
+
+                Console.WriteLine("Do you want to lock a row? Type y for yes and press enter.");
+                lockOrNo = Console.ReadLine().ToLower();
+                if (lockOrNo.Equals("y"))
+                {
+                    Console.WriteLine("Type 1 to lock first row, type 2 for second and 3 for third.");
+                    lockRowNumber = Console.ReadLine();
+                    switch (Int32.Parse(lockRowNumber))
+                    {
+                        case 1:
+                            slotRow2 = randomNumbers();
+                            slotRow3 = randomNumbers()
+                            continue;
+                        case 2:
+                            slotRow1 = randomNumbers();
+                            slotRow3 = randomNumbers();
+                            break;
+                        case 3:
+                            slotRow2 = randomNumbers();
+                            slotRow3 = randomNumbers();
+                            break;
+                        default:
+                            break;
+                    }
                 }
 
                 Console.WriteLine("Pull again? Press y for yes, type anything else for no and press enter.");
