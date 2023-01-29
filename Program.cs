@@ -5,17 +5,19 @@
         const int PLAYMONEY = 100;
         static void Main(string[] args)
         {
+            int[] slotRow1 = randomNumbers();
+            int[] slotRow2 = randomNumbers();
+            int[] slotRow3 = randomNumbers();
+
             int prizeMoney = PLAYMONEY + 10;
             string wantToPlay = string.Empty;
             string lockOrNo;
             string lockRowNumber;
+            string pullAgain;
 
             do
             {
                 prizeMoney -= 10;
-                int[] slotRow1 = randomNumbers();
-                int[] slotRow2 = randomNumbers();
-                int[] slotRow3 = randomNumbers();
                 Console.WriteLine($"{slotRow1[0]} {slotRow1[1]} {slotRow1[2]}");
                 Console.WriteLine($"{slotRow2[0]} {slotRow2[1]} {slotRow2[2]}");
                 Console.WriteLine($"{slotRow3[0]} {slotRow3[1]} {slotRow3[2]}");
@@ -74,7 +76,17 @@
                     }
                 }
 
-                Console.WriteLine("Pull again? Press y for yes, type anything else for no and press enter.");
+                
+                Console.WriteLine("Refresh all rows? Press y for yes, type anything else for no and press enter.");
+                pullAgain = Console.ReadLine().ToLower();
+                if (pullAgain.Equals("y"))
+                {
+                    slotRow1 = randomNumbers();
+                    slotRow2 = randomNumbers();
+                    slotRow3 = randomNumbers();
+                }
+                
+                Console.WriteLine("Run again? type y for yes, type anything else for no and press enter");
                 wantToPlay = Console.ReadLine().ToLower();
                 Console.Clear();
 
