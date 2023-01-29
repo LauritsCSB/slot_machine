@@ -54,15 +54,18 @@
                     {
                         case 1:
                             slotRow2 = randomNumbers();
-                            slotRow3 = randomNumbers()
-                            continue;
+                            slotRow3 = randomNumbers();
+                            prizeMoney -= 10;
+                            break;
                         case 2:
                             slotRow1 = randomNumbers();
                             slotRow3 = randomNumbers();
+                            prizeMoney -= 10;
                             break;
                         case 3:
                             slotRow2 = randomNumbers();
                             slotRow3 = randomNumbers();
+                            prizeMoney -= 10;
                             break;
                         default:
                             break;
