@@ -18,6 +18,7 @@
                 Console.WriteLine($"{slotRow1[0]} {slotRow1[1]} {slotRow1[2]}");
                 Console.WriteLine($"{slotRow2[0]} {slotRow2[1]} {slotRow2[2]}");
                 Console.WriteLine($"{slotRow3[0]} {slotRow3[1]} {slotRow3[2]}");
+                Console.WriteLine($"Prizemoney: ${prizeMoney}");
 
                 if (twoRowsSame(slotRow1, slotRow2) || twoRowsSame(slotRow1, slotRow3) || twoRowsSame(slotRow2, slotRow3))
                 {
@@ -78,7 +79,7 @@
 
             } while (wantToPlay.Equals("y") && prizeMoney > 0);
 
-            Console.WriteLine(prizeMoney > 0 ? $"Congratulations, you won ${prizeMoney}!" : "Sorry you lost..");
+            Console.WriteLine(prizeMoney > 0 ? $"Congratulations, you won ${prizeMoney}!" : "Sorry you lost.. everything!");
 
             //TODO Keep track of pricemoney, maybe withdraw amount for locking rows?
 
