@@ -2,12 +2,13 @@
 {
     class Program
     {
+        const int PLAYMONEY = 100;
         static void Main(string[] args)
         {
             int[] slotRow1 = randomNumbers();
             int[] slotRow2 = randomNumbers();
             int[] slotRow3 = randomNumbers();
-            int playMoney = 100;
+            int prizeMoney = PLAYMONEY;
             string wantToPlay = string.Empty;
             string lockOrNo;
             string lockRowNumber;
@@ -20,27 +21,27 @@
 
                 if (twoRowsSame(slotRow1, slotRow2) || twoRowsSame(slotRow1, slotRow3) || twoRowsSame(slotRow2, slotRow3))
                 {
-                    playMoney += 50;
+                    prizeMoney += 50;
 
                     if (allRowsSame(slotRow1, slotRow2, slotRow3))
                     {
-                        playMoney += 100;
+                        prizeMoney += 100;
                     }
                 }
 
                 if (crossRows(slotRow1, slotRow2, slotRow3))
                 {
-                    playMoney += 35;
+                    prizeMoney += 35;
                 }
 
                 if (slashRow(slotRow1, slotRow2, slotRow3))
                 {
-                    playMoney += 25;
+                    prizeMoney += 25;
                 }
 
                 if (oneRow(slotRow1) || oneRow(slotRow2) || oneRow(slotRow3))
                 {
-                    playMoney += 15;
+                    prizeMoney += 15;
                 }
 
                 Console.WriteLine("Do you want to lock a row? Type y for yes and press enter.");
@@ -71,13 +72,10 @@
                 Console.WriteLine("Pull again? Press y for yes, type anything else for no and press enter.");
                 wantToPlay = Console.ReadLine().ToLower();
                 Console.Clear();
-            } while (wantToPlay.Equals("y") && playMoney > 0);
 
-            Console.WriteLine(playMoney > 0 ? $"Congratulations, you won ${playMoney}!" : "Sorry you lost..");
+            } while (wantToPlay.Equals("y") && prizeMoney > 0);
 
-
-            //TODO Create function to collect rewards (All numbers same, cross rows same, two rows same,
-            //"slash row same", one row same
+            Console.WriteLine(prizeMoney > 0 ? $"Congratulations, you won ${prizeMoney}!" : "Sorry you lost..");
 
             //TODO Keep track of pricemoney, maybe withdraw amount for locking rows?
 
