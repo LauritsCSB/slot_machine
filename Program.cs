@@ -5,13 +5,14 @@
         const int PLAYMONEY = 100;
         static void Main(string[] args)
         {
-            int prizeMoney = PLAYMONEY;
+            int prizeMoney = PLAYMONEY + 10;
             string wantToPlay = string.Empty;
             string lockOrNo;
             string lockRowNumber;
 
             do
             {
+                prizeMoney -= 10;
                 int[] slotRow1 = randomNumbers();
                 int[] slotRow2 = randomNumbers();
                 int[] slotRow3 = randomNumbers();
