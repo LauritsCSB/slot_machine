@@ -5,9 +5,6 @@
         const int PLAYMONEY = 100;
         static void Main(string[] args)
         {
-            int[] slotRow1 = randomNumbers();
-            int[] slotRow2 = randomNumbers();
-            int[] slotRow3 = randomNumbers();
             int prizeMoney = PLAYMONEY;
             string wantToPlay = string.Empty;
             string lockOrNo;
@@ -15,6 +12,9 @@
 
             do
             {
+                int[] slotRow1 = randomNumbers();
+                int[] slotRow2 = randomNumbers();
+                int[] slotRow3 = randomNumbers();
                 Console.WriteLine($"{slotRow1[0]} {slotRow1[1]} {slotRow1[2]}");
                 Console.WriteLine($"{slotRow2[0]} {slotRow2[1]} {slotRow2[2]}");
                 Console.WriteLine($"{slotRow3[0]} {slotRow3[1]} {slotRow3[2]}");
@@ -81,10 +81,6 @@
 
             Console.WriteLine(prizeMoney > 0 ? $"Congratulations, you won ${prizeMoney}!" : "Sorry you lost.. everything!");
 
-            //TODO Keep track of pricemoney, maybe withdraw amount for locking rows?
-
-            //TODO Output pricemoney and message to user if game isn't continued or lost
-
             //TODO Fix game locking row loop to check for rewards and decrease playmoney every time lock mehtod is used. Figure out when
             // all slotrows should be reset
         }
@@ -114,7 +110,7 @@
         {
             bool slotsCross = false;
             int boolCounter = 0;
-            if (firstArray[0] == firstArray[2])  == thirdArray[2])
+            if (firstArray[0] == firstArray[2])
             {
                 boolCounter++;
 
