@@ -26,26 +26,31 @@
                 if (twoRowsSame(slotRow1, slotRow2) || twoRowsSame(slotRow1, slotRow3) || twoRowsSame(slotRow2, slotRow3))
                 {
                     prizeMoney += 50;
+                    Console.WriteLine("Two rows same!");
 
                     if (allRowsSame(slotRow1, slotRow2, slotRow3))
                     {
                         prizeMoney += 100;
+                        Console.WriteLine("All rows same!");
                     }
                 }
 
                 if (crossRows(slotRow1, slotRow2, slotRow3))
                 {
                     prizeMoney += 35;
+                    Console.WriteLine("Cross rows!");
                 }
 
                 if (slashRow(slotRow1, slotRow2, slotRow3))
                 {
                     prizeMoney += 25;
+                    Console.WriteLine("Slash row!");
                 }
 
                 if (oneRow(slotRow1) || oneRow(slotRow2) || oneRow(slotRow3))
                 {
                     prizeMoney += 15;
+                    Console.WriteLine("One row same!");
                 }
 
                 Console.WriteLine("Do you want to lock a row? Type y for yes and press enter.");
