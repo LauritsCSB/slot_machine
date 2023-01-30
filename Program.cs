@@ -99,6 +99,11 @@
             // all slotrows should be reset
         }
 
+        /// <summary>
+        /// Takes a string, displays it to the console. Reads user input and converts it to lower case.
+        /// </summary>
+        /// <param name="decision">String containing question for user</param>
+        /// <returns>Users answer</returns>
         static string UserInput(string decision)
         {
             Console.WriteLine(decision);
@@ -106,17 +111,34 @@
             return answer;
         }
 
+        /// <summary>
+        /// Creates a new array and fills it with random integers between 1 and 10 (10 not included).
+        /// </summary>
+        /// <returns>Array containing 3 random integers</returns>
         static int[] RandomNumbers()
         {
             var rand = new Random();
             return new[] { rand.Next(1, 10), rand.Next(1, 10), rand.Next(1, 10) };
         }
 
+        /// <summary>
+        /// Uses Enumerable class with SequenceEqual, compares elements of two arrays and decide if they are equal
+        /// </summary>
+        /// <param name="firstArray">First array to compare</param>
+        /// <param name="secondArray">Second array to compare</param>
+        /// <returns>Boolean value depending on the comparison</returns>
         static bool TwoRowsSame(int[] firstArray, int[] secondArray)
         {
             return Enumerable.SequenceEqual(firstArray, secondArray);
         }
 
+        /// <summary>
+        /// Uses Enumerable class with SequenceEqual method, compares first array with second and third with second to determine if all three are equal
+        /// </summary>
+        /// <param name="firstArray">First array to compare</param>
+        /// <param name="secondArray">Second array to compare</param>
+        /// <param name="thirdArray">Third array to compare</param>
+        /// <returns>Boolean value depending on the comparison</returns>
         static bool AllRowsSame(int[] firstArray, int[] secondArray, int[] thirdArray)
         {
             bool everyRowSame = false;
@@ -127,6 +149,13 @@
             return everyRowSame;
         }
 
+        /// <summary>
+        /// Checks wether elements of three arrays are the same in such a way they would display a cross on the console
+        /// </summary>
+        /// <param name="firstArray">First array to compare</param>
+        /// <param name="secondArray">Second array to compare</param>
+        /// <param name="thirdArray">Third array to compare</param>
+        /// <returns>Boolean value depending on the comparison</returns>
         static bool CrossRows(int[] firstArray, int[] secondArray, int[] thirdArray)
         {
             bool slotsCross = false;
@@ -154,6 +183,13 @@
             return slotsCross;
         }
 
+        /// <summary>
+        /// Checks if elements of three arrays are the same in such a way they would display either a forward- or backslash in the console
+        /// </summary>
+        /// <param name="firstArray">First array to compare</param>
+        /// <param name="secondArray">Second array to compare</param>
+        /// <param name="thirdArray">Third array to compare</param>
+        /// <returns>Boolean value depending on the comparison</returns>
         static bool SlashRow(int[] firstArray, int[] secondArray, int[] thirdArray)
         {
             bool slashRow = false;
@@ -171,6 +207,11 @@
             return slashRow;
         }
 
+        /// <summary>
+        /// Checks if all three elements of an arrays are the same value
+        /// </summary>
+        /// <param name="array">Element to check</param>
+        /// <returns>Boolean value depending on the comparison</returns>
         static bool OneRow(int[] array)
         {
             bool oneRow = false;
