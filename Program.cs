@@ -5,9 +5,9 @@
         const int PLAYMONEY = 100;
         static void Main(string[] args)
         {
-            int[] slotRow1 = randomNumbers();
-            int[] slotRow2 = randomNumbers();
-            int[] slotRow3 = randomNumbers();
+            int[] slotRow1 = RandomNumbers();
+            int[] slotRow2 = RandomNumbers();
+            int[] slotRow3 = RandomNumbers();
 
             int prizeMoney = PLAYMONEY + 10;
             string wantToPlay = string.Empty;
@@ -23,31 +23,31 @@
                 Console.WriteLine($"{slotRow3[0]} {slotRow3[1]} {slotRow3[2]}");
                 Console.WriteLine($"Prizemoney: ${prizeMoney}");
 
-                if (twoRowsSame(slotRow1, slotRow2) || twoRowsSame(slotRow1, slotRow3) || twoRowsSame(slotRow2, slotRow3))
+                if (TwoRowsSame(slotRow1, slotRow2) || TwoRowsSame(slotRow1, slotRow3) || TwoRowsSame(slotRow2, slotRow3))
                 {
                     prizeMoney += 50;
                     Console.WriteLine("Two rows same!");
 
-                    if (allRowsSame(slotRow1, slotRow2, slotRow3))
+                    if (AllRowsSame(slotRow1, slotRow2, slotRow3))
                     {
                         prizeMoney += 100;
                         Console.WriteLine("All rows same!");
                     }
                 }
 
-                if (crossRows(slotRow1, slotRow2, slotRow3))
+                if (CrossRows(slotRow1, slotRow2, slotRow3))
                 {
                     prizeMoney += 35;
                     Console.WriteLine("Cross rows!");
                 }
 
-                if (slashRow(slotRow1, slotRow2, slotRow3))
+                if (SlashRow(slotRow1, slotRow2, slotRow3))
                 {
                     prizeMoney += 25;
                     Console.WriteLine("Slash row!");
                 }
 
-                if (oneRow(slotRow1) || oneRow(slotRow2) || oneRow(slotRow3))
+                if (OneRow(slotRow1) || OneRow(slotRow2) || OneRow(slotRow3))
                 {
                     prizeMoney += 15;
                     Console.WriteLine("One row same!");
@@ -62,18 +62,18 @@
                     switch (Int32.Parse(lockRowNumber))
                     {
                         case 1:
-                            slotRow2 = randomNumbers();
-                            slotRow3 = randomNumbers();
+                            slotRow2 = RandomNumbers();
+                            slotRow3 = RandomNumbers();
                             prizeMoney -= 10;
                             break;
                         case 2:
-                            slotRow1 = randomNumbers();
-                            slotRow3 = randomNumbers();
+                            slotRow1 = RandomNumbers();
+                            slotRow3 = RandomNumbers();
                             prizeMoney -= 10;
                             break;
                         case 3:
-                            slotRow2 = randomNumbers();
-                            slotRow3 = randomNumbers();
+                            slotRow2 = RandomNumbers();
+                            slotRow3 = RandomNumbers();
                             prizeMoney -= 10;
                             break;
                         default:
@@ -86,9 +86,9 @@
                 pullAgain = Console.ReadLine().ToLower();
                 if (pullAgain.Equals("y"))
                 {
-                    slotRow1 = randomNumbers();
-                    slotRow2 = randomNumbers();
-                    slotRow3 = randomNumbers();
+                    slotRow1 = RandomNumbers();
+                    slotRow2 = RandomNumbers();
+                    slotRow3 = RandomNumbers();
                 }
                 
                 Console.WriteLine("Run again? type y for yes, type anything else for no and press enter");
@@ -103,18 +103,20 @@
             // all slotrows should be reset
         }
 
-        static int[] randomNumbers()
+        static string 
+
+        static int[] RandomNumbers()
         {
             var rand = new Random();
             return new[] { rand.Next(1, 10), rand.Next(1, 10), rand.Next(1, 10) };
         }
 
-        static bool twoRowsSame(int[] firstArray, int[] secondArray)
+        static bool TwoRowsSame(int[] firstArray, int[] secondArray)
         {
             return Enumerable.SequenceEqual(firstArray, secondArray);
         }
 
-        static bool allRowsSame(int[] firstArray, int[] secondArray, int[] thirdArray)
+        static bool AllRowsSame(int[] firstArray, int[] secondArray, int[] thirdArray)
         {
             bool everyRowSame = false;
             if (Enumerable.SequenceEqual(firstArray, secondArray) && Enumerable.SequenceEqual(secondArray, thirdArray))
@@ -124,7 +126,7 @@
             return everyRowSame;
         }
 
-        static bool crossRows(int[] firstArray, int[] secondArray, int[] thirdArray)
+        static bool CrossRows(int[] firstArray, int[] secondArray, int[] thirdArray)
         {
             bool slotsCross = false;
             int boolCounter = 0;
@@ -151,7 +153,7 @@
             return slotsCross;
         }
 
-        static bool slashRow(int[] firstArray, int[] secondArray, int[] thirdArray)
+        static bool SlashRow(int[] firstArray, int[] secondArray, int[] thirdArray)
         {
             bool slashRow = false;
 
@@ -168,7 +170,7 @@
             return slashRow;
         }
 
-        static bool oneRow(int[] array)
+        static bool OneRow(int[] array)
         {
             bool oneRow = false;
             for (int i = 1; i < array.Length; i++)
