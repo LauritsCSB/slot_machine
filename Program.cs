@@ -53,8 +53,7 @@
                     Console.WriteLine("One row same!");
                 }
 
-                Console.WriteLine("Do you want to lock a row? Type y for yes and press enter.");
-                lockOrNo = Console.ReadLine().ToLower();
+                lockOrNo = UserInput("Do you want to lock a row? Type y for yes and press enter.");
                 if (lockOrNo.Equals("y"))
                 {
                     Console.WriteLine("Type 1 to lock first row, type 2 for second and 3 for third.");
@@ -80,10 +79,8 @@
                             break;
                     }
                 }
-
                 
-                Console.WriteLine("Refresh all rows? Press y for yes, type anything else for no and press enter.");
-                pullAgain = Console.ReadLine().ToLower();
+                pullAgain = UserInput("Refresh all rows? Press y for yes, type anything else for no and press enter.");
                 if (pullAgain.Equals("y"))
                 {
                     slotRow1 = RandomNumbers();
@@ -91,8 +88,7 @@
                     slotRow3 = RandomNumbers();
                 }
                 
-                Console.WriteLine("Run again? type y for yes, type anything else for no and press enter");
-                wantToPlay = Console.ReadLine().ToLower();
+                wantToPlay = UserInput("Run again? type y for yes, type anything else for no and press enter");
                 Console.Clear();
 
             } while (wantToPlay.Equals("y") && prizeMoney > 0);
@@ -103,7 +99,12 @@
             // all slotrows should be reset
         }
 
-        static string 
+        static string UserInput(string decision)
+        {
+            Console.WriteLine(decision);
+            string answer = Console.ReadLine().ToLower();
+            return answer;
+        }
 
         static int[] RandomNumbers()
         {
